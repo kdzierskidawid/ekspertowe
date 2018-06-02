@@ -38,7 +38,6 @@ wyborem_mo¿e_byæ(pilka_nozna) :-
 wyborem_mo¿e_byæ(siatkowka) :-
    u¿ytkownik_mówi(sport_zespolowy,yes),
    u¿ytkownik_mówi(jestes_wysoki,yes),
-   u¿ytkownik_mówi(reka_noga,yes),
    u¿ytkownik_mówi(lubisz_biegac,no).
 
 wyborem_mo¿e_byæ(float_fitness) :-
@@ -119,8 +118,195 @@ wyborem_mo¿e_byæ(tenis) :-
    u¿ytkownik_mówi(siatka_miedzy_zawodnikami,yes),
    u¿ytkownik_mówi(gra_lotka,no).
    
+wyborem_mo¿e_byæ(squash) :-
+   u¿ytkownik_mówi(sport_zespolowy,no),
+   u¿ytkownik_mówi(sport_wodny,no),
+   u¿ytkownik_mówi(sport_zimowy,no),
+   u¿ytkownik_mówi(zwiazany_z_walka,no),
+   u¿ytkownik_mówi(sport_z_partnerem,yes),
+   u¿ytkownik_mówi(sport_wytrzymalosciowy,yes),
+   u¿ytkownik_mówi(siatka_miedzy_zawodnikami,no).
+   
+wyborem_mo¿e_byæ(tenis_stolowy) :-
+   u¿ytkownik_mówi(sport_zespolowy,no),
+   u¿ytkownik_mówi(sport_wodny,no),
+   u¿ytkownik_mówi(sport_zimowy,no),
+   u¿ytkownik_mówi(zwiazany_z_walka,no),
+   u¿ytkownik_mówi(sport_z_partnerem,yes),
+   u¿ytkownik_mówi(sport_wytrzymalosciowy,no).
+   
+wyborem_mo¿e_byæ(fitness) :-
+   u¿ytkownik_mówi(sport_zespolowy,no),
+   u¿ytkownik_mówi(sport_wodny,no),
+   u¿ytkownik_mówi(sport_zimowy,no),
+   u¿ytkownik_mówi(zwiazany_z_walka,no),
+   u¿ytkownik_mówi(sport_z_partnerem,no),
+   u¿ytkownik_mówi(sport_wytrzymalosciowy,yes),
+   u¿ytkownik_mówi(sport_silowy,yes),
+   u¿ytkownik_mówi(lek_wysokosci,yes).
+   
+wyborem_mo¿e_byæ(wspinaczka) :-
+   u¿ytkownik_mówi(sport_zespolowy,no),
+   u¿ytkownik_mówi(sport_wodny,no),
+   u¿ytkownik_mówi(sport_zimowy,no),
+   u¿ytkownik_mówi(zwiazany_z_walka,no),
+   u¿ytkownik_mówi(sport_z_partnerem,no),
+   u¿ytkownik_mówi(sport_wytrzymalosciowy,yes),
+   u¿ytkownik_mówi(sport_silowy,yes),
+   u¿ytkownik_mówi(lek_wysokosci,no).
+   
+wyborem_mo¿e_byæ(fit_and_jump) :-
+   u¿ytkownik_mówi(sport_zespolowy,no),
+   u¿ytkownik_mówi(sport_wodny,no),
+   u¿ytkownik_mówi(sport_zimowy,no),
+   u¿ytkownik_mówi(zwiazany_z_walka,no),
+   u¿ytkownik_mówi(sport_z_partnerem,no),
+   u¿ytkownik_mówi(sport_wytrzymalosciowy,yes),
+   u¿ytkownik_mówi(sport_silowy,no),
+   u¿ytkownik_mówi(rozciaganiev2,yes).
+   
+wyborem_mo¿e_byæ(lekkoatletyka) :-
+   u¿ytkownik_mówi(sport_zespolowy,no),
+   u¿ytkownik_mówi(sport_wodny,no),
+   u¿ytkownik_mówi(sport_zimowy,no),
+   u¿ytkownik_mówi(zwiazany_z_walka,no),
+   u¿ytkownik_mówi(sport_z_partnerem,no),
+   u¿ytkownik_mówi(sport_wytrzymalosciowy,yes),
+   u¿ytkownik_mówi(sport_silowy,no),
+   u¿ytkownik_mówi(rozciaganiev2,no),
+   u¿ytkownik_mówi(naturalny_ruch,yes).
+   
+wyborem_mo¿e_byæ(kolarstwo) :-
+   u¿ytkownik_mówi(sport_zespolowy,no),
+   u¿ytkownik_mówi(sport_wodny,no),
+   u¿ytkownik_mówi(sport_zimowy,no),
+   u¿ytkownik_mówi(zwiazany_z_walka,no),
+   u¿ytkownik_mówi(sport_z_partnerem,no),
+   u¿ytkownik_mówi(sport_wytrzymalosciowy,yes),
+   u¿ytkownik_mówi(sport_silowy,no),
+   u¿ytkownik_mówi(rozciaganiev2,no),
+   u¿ytkownik_mówi(naturalny_ruch,no).
+   
+wyborem_mo¿e_byæ(akrobatyka_powietrzna) :-
+   u¿ytkownik_mówi(sport_zespolowy,no),
+   u¿ytkownik_mówi(sport_wodny,no),
+   u¿ytkownik_mówi(sport_zimowy,no),
+   u¿ytkownik_mówi(zwiazany_z_walka,no),
+   u¿ytkownik_mówi(sport_z_partnerem,no),
+   u¿ytkownik_mówi(sport_wytrzymalosciowy,no),
+   u¿ytkownik_mówi(sport_ekstremalny,yes).
+   
+wyborem_mo¿e_byæ(fitnessv2) :-
+   u¿ytkownik_mówi(sport_zespolowy,no),
+   u¿ytkownik_mówi(sport_wodny,no),
+   u¿ytkownik_mówi(sport_zimowy,no),
+   u¿ytkownik_mówi(zwiazany_z_walka,no),
+   u¿ytkownik_mówi(sport_z_partnerem,no),
+   u¿ytkownik_mówi(sport_wytrzymalosciowy,no),
+   u¿ytkownik_mówi(sport_ekstremalny,no),
+   u¿ytkownik_mówi(zwiazane_z_rozciaganiem,yes),
+   u¿ytkownik_mówi(duzo_ruchu,yes),
+   u¿ytkownik_mówi(sport_silowy2,yes).
    
    
+wyborem_mo¿e_byæ(aerobik) :-
+   u¿ytkownik_mówi(sport_zespolowy,no),
+   u¿ytkownik_mówi(sport_wodny,no),
+   u¿ytkownik_mówi(sport_zimowy,no),
+   u¿ytkownik_mówi(zwiazany_z_walka,no),
+   u¿ytkownik_mówi(sport_z_partnerem,no),
+   u¿ytkownik_mówi(sport_wytrzymalosciowy,no),
+   u¿ytkownik_mówi(sport_ekstremalny,no),
+   u¿ytkownik_mówi(zwiazane_z_rozciaganiem,yes),
+   u¿ytkownik_mówi(duzo_ruchu,yes),
+   u¿ytkownik_mówi(sport_silowy2,no),
+   u¿ytkownik_mówi(muzyka,yes).
+   
+wyborem_mo¿e_byæ(fit_and_jump) :-
+   u¿ytkownik_mówi(sport_zespolowy,no),
+   u¿ytkownik_mówi(sport_wodny,no),
+   u¿ytkownik_mówi(sport_zimowy,no),
+   u¿ytkownik_mówi(zwiazany_z_walka,no),
+   u¿ytkownik_mówi(sport_z_partnerem,no),
+   u¿ytkownik_mówi(sport_wytrzymalosciowy,no),
+   u¿ytkownik_mówi(sport_ekstremalny,no),
+   u¿ytkownik_mówi(zwiazane_z_rozciaganiem,yes),
+   u¿ytkownik_mówi(duzo_ruchu,yes),
+   u¿ytkownik_mówi(sport_silowy2,no),
+   u¿ytkownik_mówi(muzyka,no).
+
+wyborem_mo¿e_byæ(yoga) :-
+   u¿ytkownik_mówi(sport_zespolowy,no),
+   u¿ytkownik_mówi(sport_wodny,no),
+   u¿ytkownik_mówi(sport_zimowy,no),
+   u¿ytkownik_mówi(zwiazany_z_walka,no),
+   u¿ytkownik_mówi(sport_z_partnerem,no),
+   u¿ytkownik_mówi(sport_wytrzymalosciowy,no),
+   u¿ytkownik_mówi(sport_ekstremalny,no),
+   u¿ytkownik_mówi(zwiazane_z_rozciaganiem,yes),
+   u¿ytkownik_mówi(duzo_ruchu,no).
+   
+wyborem_mo¿e_byæ(trojboj_silowy) :-
+   u¿ytkownik_mówi(sport_zespolowy,no),
+   u¿ytkownik_mówi(sport_wodny,no),
+   u¿ytkownik_mówi(sport_zimowy,no),
+   u¿ytkownik_mówi(zwiazany_z_walka,no),
+   u¿ytkownik_mówi(sport_z_partnerem,no),
+   u¿ytkownik_mówi(sport_wytrzymalosciowy,no),
+   u¿ytkownik_mówi(sport_ekstremalny,no),
+   u¿ytkownik_mówi(zwiazane_z_rozciaganiem,no),
+   u¿ytkownik_mówi(sport_silowy3,yes),
+   u¿ytkownik_mówi(podnoszenie_ciezarow,yes).
+
+wyborem_mo¿e_byæ(wspinaczka) :-
+   u¿ytkownik_mówi(sport_zespolowy,no),
+   u¿ytkownik_mówi(sport_wodny,no),
+   u¿ytkownik_mówi(sport_zimowy,no),
+   u¿ytkownik_mówi(zwiazany_z_walka,no),
+   u¿ytkownik_mówi(sport_z_partnerem,no),
+   u¿ytkownik_mówi(sport_wytrzymalosciowy,no),
+   u¿ytkownik_mówi(sport_ekstremalny,no),
+   u¿ytkownik_mówi(zwiazane_z_rozciaganiem,no),
+   u¿ytkownik_mówi(sport_silowy3,yes),
+   u¿ytkownik_mówi(podnoszenie_ciezarow,no).
+   
+wyborem_mo¿e_byæ(jezdziectwo) :-
+   u¿ytkownik_mówi(sport_zespolowy,no),
+   u¿ytkownik_mówi(sport_wodny,no),
+   u¿ytkownik_mówi(sport_zimowy,no),
+   u¿ytkownik_mówi(zwiazany_z_walka,no),
+   u¿ytkownik_mówi(sport_z_partnerem,no),
+   u¿ytkownik_mówi(sport_wytrzymalosciowy,no),
+   u¿ytkownik_mówi(sport_ekstremalny,no),
+   u¿ytkownik_mówi(zwiazane_z_rozciaganiem,no),
+   u¿ytkownik_mówi(sport_silowy3, no),
+   u¿ytkownik_mówi(sport_ze_zwierzetami,yes).
+   
+wyborem_mo¿e_byæ(brydz) :-
+   u¿ytkownik_mówi(sport_zespolowy,no),
+   u¿ytkownik_mówi(sport_wodny,no),
+   u¿ytkownik_mówi(sport_zimowy,no),
+   u¿ytkownik_mówi(zwiazany_z_walka,no),
+   u¿ytkownik_mówi(sport_z_partnerem,no),
+   u¿ytkownik_mówi(sport_wytrzymalosciowy,no),
+   u¿ytkownik_mówi(sport_ekstremalny,no),
+   u¿ytkownik_mówi(zwiazane_z_rozciaganiem,no),
+   u¿ytkownik_mówi(sport_silowy3, no),
+   u¿ytkownik_mówi(sport_ze_zwierzetami,no),
+   u¿ytkownik_mówi(karciany,yes).
+   
+wyborem_mo¿e_byæ(brak_sportu) :-
+   u¿ytkownik_mówi(sport_zespolowy,no),
+   u¿ytkownik_mówi(sport_wodny,no),
+   u¿ytkownik_mówi(sport_zimowy,no),
+   u¿ytkownik_mówi(zwiazany_z_walka,no),
+   u¿ytkownik_mówi(sport_z_partnerem,no),
+   u¿ytkownik_mówi(sport_wytrzymalosciowy,no),
+   u¿ytkownik_mówi(sport_ekstremalny,no),
+   u¿ytkownik_mówi(zwiazane_z_rozciaganiem,no),
+   u¿ytkownik_mówi(sport_silowy3, no),
+   u¿ytkownik_mówi(sport_ze_zwierzetami,no),
+   u¿ytkownik_mówi(karciany,no).
 %
 % Case knowledge base
 %   (information supplied by the user during the consultation)
@@ -179,7 +365,10 @@ zadaj_pytanie(stroj_kapielowy) :-
 
 zadaj_pytanie(rozciaganie) :-
    write('Czy zale¿y Ci na rozci¹ganiu siê? '),nl.
-   
+
+zadaj_pytanie(rozciaganiev2) :-
+   write('Czy zale¿y Ci na rozci¹ganiu siê? '),nl.
+
 zadaj_pytanie(techniczne_plywanie) :-
    write('Czy zale¿y Ci na p³ywaniu okreslona technika? '),nl.
    
@@ -206,6 +395,45 @@ zadaj_pytanie(siatka_miedzy_zawodnikami) :-
 
 zadaj_pytanie(gra_lotka) :-
    write('Czy preferujesz grê lotk¹? '),nl.
+
+zadaj_pytanie(lek_wysokosci) :-
+   write('Masz lêk wysokosci? '),nl.
+
+zadaj_pytanie(sport_silowy) :-
+   write('Sport silowy? '),nl.
+   
+zadaj_pytanie(sport_silowy2) :-
+   write('Sport silowy? '),nl.
+   
+zadaj_pytanie(sport_silowy3) :-
+   write('Sport silowy? '),nl.
+   
+zadaj_pytanie(naturalny_ruch) :-
+   write('Lubisz normalna aktywnosc fizyczna? '),nl.
+   
+zadaj_pytanie(sport_ekstremalny) :-
+   write('Lubisz dawkê adrenaliny? '),nl.
+   
+zadaj_pytanie(zwiazane_z_rozciaganiem) :-
+   write('Chcesz sie porozciagac? '),nl.
+   
+zadaj_pytanie(duzo_ruchu) :-
+   write('Czy chcesz sie trochê rozruszaæ? '),nl.
+   
+zadaj_pytanie(muzyka) :-
+   write('Chcesz, aby æwiczeniom towarzyszy³a muzyka? '),nl.
+   
+zadaj_pytanie(podnoszenie_ciezarow) :-
+   write('Czy chcesz podnosiæ ciê¿ary? '),nl.
+   
+zadaj_pytanie(sport_ze_zwierzetami) :-
+   write('Chcesz æwiczyc przy asyscie zwierz¹t? '),nl.
+   
+zadaj_pytanie(karciany) :-
+   write('Lubisz gre w karty? '),nl.
+   
+zadaj_pytanie(brak_sportu) :-
+   write('Lubisz gre w karty? '),nl.
    
 zadaj_pytanie() :-
    write('Czy... ? '),nl.
@@ -263,7 +491,6 @@ explain(judo) :-
 explain(karate) :-
    nl,
    write('Przybywajcie wyzwania i próby, przybywajcie trudy ¿ycia – ja jestem gotów na karate!'),nl.
-   
 
 explain(badminton) :-
    nl,
@@ -272,6 +499,68 @@ explain(badminton) :-
 explain(tenis) :-
    nl,
    write('Idealnym sportem dla Ciebie bêdzie tenis!'),nl.
+   
+explain(squash) :-
+   nl,
+   write('Idealnym sportem dla Ciebie bêdzie squash!'),nl.
+   
+explain(tenis_stolowy) :-
+   nl,
+   write('Idealnym sportem dla Ciebie bêdzie tenis sto³owy!'),nl.
+   
+explain(fitness) :-
+   nl,
+   write('Idealnym sportem dla Ciebie bêdzie fitness!'),nl.
+   
+explain(fitnessv2) :-
+   nl,
+   write('Idealnym sportem dla Ciebie bêdzie fitness!'),nl.
+
+explain(wspinaczka) :-
+   nl,
+   write('Idealnym sportem dla Ciebie bêdzie wspinaczka!'),nl.
+   
+explain(fit_and_jump) :-
+   nl,
+   write('Idealnym sportem dla Ciebie bêdzie fit_and_jump!'),nl.
+   
+explain(lekkoatletyka) :-
+   nl,
+   write('Idealnym sportem dla Ciebie bêdzie lekkoatletyka!'),nl.
+   
+explain(kolarstwo) :-
+   nl,
+   write('Idealnym sportem dla Ciebie bêdzie kolarstwo!'),nl.
+   
+explain(akrobatyka_powietrzna) :-
+   nl,
+   write('Idealnym sportem dla Ciebie bêd¹ akrobacje w powietrzu!'),nl.
+   
+explain(aerobik) :-
+   nl,
+   write('Idealnym sportem dla Ciebie bêdzie aerobik!'),nl.
+   
+explain(trojboj_silowy) :-
+   nl,
+   write('Idealnym sportem dla Ciebie bêdzie trójbój si³owy!'),nl.
+   
+explain(jezdziectwo) :-
+   nl,
+   write('Idealnym sportem dla Ciebie bêdzie jeŸdziectwo!'),nl.
+   
+explain(brydz) :-
+   nl,
+   write('Idealnym sportem dla Ciebie bêdzie bryd¿!'),nl.
+
+explain(yoga) :-
+   nl,
+   write('Idealnym sportem dla Ciebie bêdzie yoga!'),nl.
+   
+explain(brak_sportu) :-
+   nl,
+   write('Jak widaæ nic Ci nie odpowiada, idŸ lepiej pograæ w lola, przymule!'),nl.
+   
+
 
 
 
