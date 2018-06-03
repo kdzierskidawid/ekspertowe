@@ -14,7 +14,6 @@ go :-
 
 spróbuj_wszystkich_mo¿liwoœci :-     % Backtrack through all possibilities...
    wyborem_mo¿e_byæ(D),
-   our_random(1,9,R),
    explain(D),
    fail.
 
@@ -33,8 +32,13 @@ wyborem_mo¿e_byæ(koszykowka) :-
    
 wyborem_mo¿e_byæ(pilka_nozna) :-
    u¿ytkownik_mówi(sport_zespolowy,yes),
-   u¿ytkownik_mówi(reka_noga,no),
-   u¿ytkownik_mówi(lubisz_biegac,yes).
+     u¿ytkownik_mówi(jestes_wysoki,no),
+   u¿ytkownik_mówi(reka_noga,no).
+   
+wyborem_mo¿e_byæ(pilka_reczna) :-
+   u¿ytkownik_mówi(sport_zespolowy,yes),
+     u¿ytkownik_mówi(jestes_wysoki,no),
+   u¿ytkownik_mówi(reka_noga,yes).
 
 wyborem_mo¿e_byæ(siatkowka) :-
    u¿ytkownik_mówi(sport_zespolowy,yes),
@@ -447,11 +451,15 @@ zadaj_pytanie() :-
 
 explain(koszykowka) :-
    nl,
-   write('koszykówka!'),nl.
+   write('Idealnym sportem dla Ciebie bêdzie koszykówka!'),nl.
    
 explain(pilka_nozna) :-
    nl,
    write('Idealnym sportem dla Ciebie bêdzie pi³ka no¿na!'),nl.
+   
+explain(pilka_reczna) :-
+   nl,
+   write('Idealnym sportem dla Ciebie bêdzie pi³ka reczna!'),nl.
 
 explain(siatkowka) :-
    nl,
@@ -563,48 +571,7 @@ explain(brak_sportu) :-
    
 
 
-num(0):-
-nl,
-   write('Idealnym sportem dla Ciebie bêdzie '),nl.
-num(1):-
-nl,
-   write('Doskonale! Sport dla Ciebie to '),nl.
-num(2):-
-nl,
-   write('Nie pêkaj, czeka na Ciebie  '),nl.
-num(3):-
-nl,
-   write('O tak! Nie mog³es trafic lepiej niz na '),nl.
-num(4):-
-nl,
-   write('Troche ruchu jeszcze nikomu nie zaszkodzilo, '),nl.
-num(5):-
-nl,
-   write('Raz, dwa, trzy, jak sie patrzy '),nl.
-num(6):-
-nl,
-   write('Krotko i na temat,  '),nl.
-num(7):-
-nl,
-   write('Co tu w trawie piszczy? To '),nl.
-num(8):-
-nl,
-   write('Poszczescilo Ci sie, '),nl.
-num(9):-
-nl,
-   write('Tak, tak, tak! '),nl.
 
-
-our_random(Lower,Upper,R):-
-
-    %% 1. con
-    num(R),
-
-    %% 2. lower
-    R >= Lower,
-
-    %% 3. upper
-    R =< Upper.
 
 
 
