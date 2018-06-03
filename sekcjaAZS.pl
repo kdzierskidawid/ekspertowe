@@ -14,7 +14,9 @@ go :-
 
 spróbuj_wszystkich_mo¿liwoœci :-     % Przejdz jeszcze raz przez wszystkie mo¿liwosci...
    wyborem_mo¿e_byæ(D),
+   our_random,
    explain(D),
+   
    fail.
 
 
@@ -440,122 +442,93 @@ zadaj_pytanie() :-
 
 
 explain(koszykowka) :-
-   nl,
-   write('Idealnym sportem dla Ciebie bêdzie koszykówka!'),nl.
+   write('koszykówka!'),nl.
 
 explain(pilka_nozna) :-
-   nl,
-   write('Idealnym sportem dla Ciebie bêdzie pi³ka no¿na!'),nl.
+   write('pi³ka no¿na!'),nl.
 
 explain(siatkowka) :-
-   nl,
-   write('Idealnym sportem dla Ciebie bêdzie siatkowka!'),nl.
+   write('siatkowka!'),nl.
 
 
 explain(reczna) :-
-   nl,
-   write('Idealnym sportem dla Ciebie bêdzie reczna!'),nl.
+   write('reczna!'),nl.
 
 
 explain(float_fitness) :-
-   nl,
-   write('Idealnym sportem dla Ciebie bêdzie float_fitness!'),nl.
+   write('float_fitness!'),nl.
 
 explain(plywanie) :-
-   nl,
-   write('Idealnym sportem dla Ciebie bêdzie plywanie!'),nl.
+   write('plywanie!'),nl.
 
 explain(nurkowanie) :-
-   nl,
-   write('Idealnym sportem dla Ciebie bêdzie nurkowanie!'),nl.
+   write('nurkowanie!'),nl.
 
 explain(ergometr_wioslarski) :-
-   nl,
-   write('Idealnym sportem dla Ciebie bêdzie ergometr wioslarski!'),nl.
+   write('ergometr wioslarski!'),nl.
 
 explain(zeglarstwo) :-
-   nl,
-   write('Koniecznie spróbuj ¿eglarstwa!'),nl.
+   write('¿eglarstwo!'),nl.
 
 explain(snowboard) :-
-   nl,
-   write('Snowboard to jest to!'),nl.
+   write('snowboard!'),nl.
 
 explain(narciarstwo) :-
-   nl,
-   write('Kamil Stoch nowego pokolenia? Spróbuj narciarstwa!'),nl.
+   write('narciarstwo!'),nl.
 
 explain(judo) :-
-   nl,
-   write('Nie odklepuj zanim nie spróbujesz! Judo to jest to!'),nl.
+   write('judo!'),nl.
 
 explain(karate) :-
-   nl,
-   write('Przybywajcie wyzwania i próby, przybywajcie trudy ¿ycia – ja jestem gotów na karate!'),nl.
+   write('karate!'),nl.
 
 explain(badminton) :-
-   nl,
-   write('Idealnym sportem dla Ciebie bêdzie badminton!'),nl.
+   write('badminton!'),nl.
 
 explain(tenis) :-
-   nl,
-   write('Idealnym sportem dla Ciebie bêdzie tenis!'),nl.
+   write('tenis!'),nl.
 
 explain(squash) :-
-   nl,
-   write('Idealnym sportem dla Ciebie bêdzie squash!'),nl.
+   write('squash!'),nl.
 
 explain(tenis_stolowy) :-
-   nl,
-   write('Idealnym sportem dla Ciebie bêdzie tenis sto³owy!'),nl.
+   write('sto³owy!'),nl.
 
 explain(fitness) :-
-   nl,
-   write('Idealnym sportem dla Ciebie bêdzie fitness!'),nl.
+   write('fitness!'),nl.
 
 explain(fitnessv2) :-
-   nl,
-   write('Idealnym sportem dla Ciebie bêdzie fitness!'),nl.
+   write('fitness!'),nl.
 
 explain(wspinaczka) :-
-   nl,
-   write('Idealnym sportem dla Ciebie bêdzie wspinaczka!'),nl.
+   write('wspinaczka!'),nl.
 
 explain(fit_and_jump) :-
-   nl,
-   write('Idealnym sportem dla Ciebie bêdzie fit_and_jump!'),nl.
+   write('fit_and_jump!'),nl.
 
 explain(lekkoatletyka) :-
-   nl,
-   write('Idealnym sportem dla Ciebie bêdzie lekkoatletyka!'),nl.
+   write('lekkoatletyka!'),nl.
 
 explain(kolarstwo) :-
-   nl,
-   write('Idealnym sportem dla Ciebie bêdzie kolarstwo!'),nl.
+   write('kolarstwo!'),nl.
 
 explain(akrobatyka_powietrzna) :-
-   nl,
-   write('Idealnym sportem dla Ciebie bêd¹ akrobacje w powietrzu!'),nl.
+   write('akrobacje w powietrzu!'),nl.
 
 explain(aerobik) :-
-   nl,
-   write('Idealnym sportem dla Ciebie bêdzie aerobik!'),nl.
+   write('aerobik!'),nl.
 
 explain(trojboj_silowy) :-
-   nl,
-   write('Idealnym sportem dla Ciebie bêdzie trójbój si³owy!'),nl.
+   write('trójbój si³owy!'),nl.
 
 explain(jezdziectwo) :-
-   nl,
-   write('Idealnym sportem dla Ciebie bêdzie jeŸdziectwo!'),nl.
+   write('jeŸdziectwo!'),nl.
 
 explain(brydz) :-
-   nl,
-   write('Ha! Twój sport to bryd¿!'),nl.
+   write('bryd¿!'),nl.
 
 explain(yoga) :-
-   nl,
-   write('Idealnym sportem dla Ciebie bêdzie yoga!'),nl.
+   write('yoga!'),nl.
 
 
 explain(brak_sportu) :-
