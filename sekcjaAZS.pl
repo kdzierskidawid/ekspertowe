@@ -12,18 +12,14 @@ go :-
    czysc_zapisane_odpowiedzi,
    spróbuj_wszystkich_mo¿liwoœci.
 
-spróbuj_wszystkich_mo¿liwoœci :-     % Backtrack through all possibilities...
+spróbuj_wszystkich_mo¿liwoœci :-     % Przejdz jeszcze raz przez wszystkie mo¿liwosci...
    wyborem_mo¿e_byæ(D),
    explain(D),
    fail.
 
-spróbuj_wszystkich_mo¿liwoœci.       % ...then succeed with no further action.
 
 
-%
-% Diagnostic knowledge base
-%   (conditions under which to give each diagnosis)
-%
+% diagnoza
 
 wyborem_mo¿e_byæ(koszykowka) :-
    u¿ytkownik_mówi(sport_zespolowy,yes),
@@ -32,13 +28,18 @@ wyborem_mo¿e_byæ(koszykowka) :-
    
 wyborem_mo¿e_byæ(pilka_nozna) :-
    u¿ytkownik_mówi(sport_zespolowy,yes),
-   u¿ytkownik_mówi(reka_noga,no),
-   u¿ytkownik_mówi(lubisz_biegac,yes).
+   u¿ytkownik_mówi(jestes_wysoki,no),
+   u¿ytkownik_mówi(reka_noga,no).
 
 wyborem_mo¿e_byæ(siatkowka) :-
    u¿ytkownik_mówi(sport_zespolowy,yes),
    u¿ytkownik_mówi(jestes_wysoki,yes),
    u¿ytkownik_mówi(lubisz_biegac,no).
+   
+wyborem_mo¿e_byæ(reczna) :-
+   u¿ytkownik_mówi(sport_zespolowy,yes),
+   u¿ytkownik_mówi(jestes_wysoki,no),
+   u¿ytkownik_mówi(reka_noga,yes).
 
 wyborem_mo¿e_byæ(float_fitness) :-
    u¿ytkownik_mówi(sport_zespolowy,no),
@@ -307,29 +308,23 @@ wyborem_mo¿e_byæ(brak_sportu) :-
    u¿ytkownik_mówi(sport_silowy3, no),
    u¿ytkownik_mówi(sport_ze_zwierzetami,no),
    u¿ytkownik_mówi(karciany,no).
-%
-% Case knowledge base
-%   (information supplied by the user during the consultation)
-%
 
+%
 :- dynamic(zapisana_odp/2).
 
-   % (Clauses get added as user answers questions.)
 
+%   Pozbycie siê zapisanych odpowiedzi bez
+%   bez zniesienia dynamicznej deklaracji.
 
-%
-% Procedure to get rid of the stored answers
-% without abolishing the dynamic declaration
-%
 
 czysc_zapisane_odpowiedzi :- retract(zapisana_odp(_,_)),fail.
 czysc_zapisane_odpowiedzi.
 
 
-%
-% Procedure to retrieve the user's answer to each question when needed,
-% or ask the question if it has not already been asked
-%
+
+%   Procedura uzyskania odpowiedzi u¿ytkownika na ka¿de pytanie w razie potrzeby,
+%   lub zadaj pytanie, jesli nie zosta³o ono ju¿ zadane
+
 
 u¿ytkownik_mówi(Q,A) :- zapisana_odp(Q,A).
 
@@ -341,9 +336,9 @@ u¿ytkownik_mówi(Q,A) :- \+ zapisana_odp(Q,_),
                   Response = A.
 
 
-%
-% Texts of the questions
-%
+
+% Tresci pytañ
+
 
 zadaj_pytanie(jestes_wysoki) :-
    write('Jestes wysoki i chcesz by wzrost mia³ wp³yw na sport, który Ci wybierzemy?'),nl.
@@ -355,7 +350,7 @@ zadaj_pytanie(sport_zespolowy) :-
    write('Czy chcesz aby by³ to sport zespo³owy? '),nl.
 
 zadaj_pytanie(reka_noga) :-
-   write('Wolisz graæ rêkoma ni¿ nogami? '),nl.
+   write('Wolisz graæ rêkoma? '),nl.
    
 zadaj_pytanie(sport_wodny) :-
    write('Czy chcesz, aby to byl sport wodny? '),nl.
@@ -379,7 +374,7 @@ zadaj_pytanie(sport_zimowy) :-
    write('Czy chcesz, aby to by³ sport zimowy? '),nl.
 
 zadaj_pytanie(nogi_zlaczone) :-
-   write('Czy chcesz miec wieksza kontrole nad praca nóg? '),nl.
+   write('Czy nogi mog¹ byæ ze sob¹ z³¹czone podczas jazdy? '),nl.
 
 zadaj_pytanie(zwiazany_z_walka) :-
    write('Czy chcesz popracowac nad Twoimi umiejêtnosciami walki? '),nl.
@@ -418,7 +413,7 @@ zadaj_pytanie(zwiazane_z_rozciaganiem) :-
    write('Chcesz sie porozciagac? '),nl.
    
 zadaj_pytanie(duzo_ruchu) :-
-   write('Czy chcesz sie trochê rozruszaæ? '),nl.
+   write('Chcesz by zajêcia by³y dosyæ ruchliwe? '),nl.
    
 zadaj_pytanie(muzyka) :-
    write('Chcesz, aby æwiczeniom towarzyszy³a muzyka? '),nl.
@@ -440,9 +435,9 @@ zadaj_pytanie() :-
 
 
 
-%
-%  Explanations for the various diagnoses
-%
+
+%  Wyjasnienia na diagnozy
+
 
 explain(koszykowka) :-
    nl,
@@ -455,6 +450,12 @@ explain(pilka_nozna) :-
 explain(siatkowka) :-
    nl,
    write('Idealnym sportem dla Ciebie bêdzie siatkowka!'),nl.
+   
+
+explain(reczna) :-
+   nl,
+   write('Idealnym sportem dla Ciebie bêdzie reczna!'),nl.
+
    
 explain(float_fitness) :-
    nl,
@@ -550,7 +551,7 @@ explain(jezdziectwo) :-
    
 explain(brydz) :-
    nl,
-   write('Idealnym sportem dla Ciebie bêdzie bryd¿!'),nl.
+   write('Ha! Twój sport to bryd¿!'),nl.
 
 explain(yoga) :-
    nl,
@@ -558,7 +559,7 @@ explain(yoga) :-
    
 explain(brak_sportu) :-
    nl,
-   write('Jak widaæ nic Ci nie odpowiada, idŸ lepiej pograæ w lola, przymule!'),nl.
+   write('Jak widaæ nic Ci nie odpowiada, najwidoczniej sport nie jest dla ka¿dego.'),nl.
    
 
 

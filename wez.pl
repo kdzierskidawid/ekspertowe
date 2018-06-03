@@ -1,10 +1,10 @@
 % Author:
 % Date: 02.06.2018
 
-wez_tak_lub_nie(Result) :- get(Char),              % read a character
-                         get0(_),                % consume the Return after it
+wez_tak_lub_nie(Result) :- get(Char),              % pobierz znak
+                         get0(_),                  % wykonaj return
                          interpret(Char,Result),
-                         !.                      % cut -- see text
+                         !.                        % przytnij tekst
 
 wez_tak_lub_nie(Result) :- nl,
                          write('Wybierz T lub N:'),
